@@ -41,3 +41,88 @@ For the rest of this assignment, you are only adding to the keyPressed() functio
 
 Remember that we used all of these in our Band Name Analyzer example. 
 5% for each.
+
+```
+let scenenum = 1;
+let score = 0;
+
+function setup() {
+ createCanvas(600, 400);
+ background(0, 255, 0);
+ textSize(20);
+ 
+}//end setup
+
+function draw() {
+    question(scenenum);
+}//end draw
+
+function keyPressed() {
+    if (key === '1' && scenenum === 1) {
+        scenenum = 2;
+        //--------------- Start of code to copy -------------------------------
+        let answer = window.prompt("Who is the best teacher");
+        
+        if(answer === "Mrs. Krabappel"){
+            score += 2;
+            displayScore("Fully Correct", score);
+        } else if (answer.includes("k")){  //this must be altered for each question you add
+             score += 1;
+            displayScore("Partially Correct", score);
+        } else{
+             displayScore("Wrong", score);
+        }
+
+        //--------------- End of code to copy -------------------------------
+
+    }//end 1
+
+    else if (key === '2' && scenenum === 2) {
+        scenenum = 3;
+
+    }//end 2
+
+    else if (key === '3' && scenenum === 3) {
+        scenenum = 4;
+    }//end 3
+
+    else if (key === '4' && scenenum === 4) {
+        scenenum = 5;
+    }//end 4
+
+    else if (key === '5' && scenenum === 5) {
+        
+    }//end5
+}//end keyPressed
+
+function displayScore(correct, sc){
+    //background box
+    fill(255, 255, 0);
+    strokeWeight(3);
+    stroke(0);
+    rect(10, 270, width-20, 120);
+
+    //text
+    fill(0)
+    noStroke();
+    textSize(10);
+    text(correct + "!", 50, 315);
+    textSize(10);
+    text("Current score: " + badvariable, 50, 360);
+}
+
+function question(questionNum) {
+    //background box
+    fill(255, 255, 0);
+    strokeWeight(3);
+    stroke(0);
+    rect(10, 10, width-20, 250);
+
+    //text
+    fill(0)
+    noStroke();
+    text("Question " + questionNum, 50, 100);
+    text("Press the " + questionNum + " key to answer this question", 50, 160);
+    
+}//question
+``` 
