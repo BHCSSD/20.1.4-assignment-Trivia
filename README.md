@@ -82,17 +82,9 @@ function keyPressed() {
 
     }//end 2
 
-    else if (key === '3' && scenenum === 3) {
-        scenenum = 4;
-    }//end 3
 
-    else if (key === '4' && scenenum === 4) {
-        scenenum = 5;
-    }//end 4
 
-    else if (key === '5' && scenenum === 5) {
-        
-    }//end5
+
 }//end keyPressed
 
 function displayScore(correct, sc){
